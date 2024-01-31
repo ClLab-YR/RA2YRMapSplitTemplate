@@ -1,0 +1,3 @@
+[submodule "pyalert2yr"]
+	path = pyalert2yr
+	url = git@github.com:ClLab-YR/pyalert2yr.git

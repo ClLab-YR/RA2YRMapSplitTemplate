@@ -1,0 +1,35 @@
+# Win Git VS VSCode
+Desktop.ini
+.vs/
+.vscode/
+*.code-workspace
+*.log
+
+# Python
+__pycache__/
+.venv
+venv
+
+# Dev
+[Dd]ebug/
+
+# Main
+test*.*
+config.ini
+# with split implemented, no need to store whole map
+*.map
+*.csf
+*.mix
+
+# Others
+*.lnk
+*.dat
+*.exe
+*.dll
+*.txt
+*.htm*
+*.png
+
+# Exclude
+!lib/*.dll
+!lib/*.exe
