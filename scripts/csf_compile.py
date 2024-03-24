@@ -11,5 +11,5 @@ if __name__ == '__main__':
         yrpycfg.get('csf.jsonfile', default='./lang.json'), '"', '')
     fc = str.replace(
         yrpycfg.get('csf.csffile', default='./stringtable99.csf'), '"', '')
-    csfdoc = csf.importJSONV2(fj)
-    csfdoc.writeCsf(fc)
+    doc = csf.CsfJsonV2Parser(fj).read()
+    csf.CsfFileParser(fc).write(doc)

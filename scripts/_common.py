@@ -8,7 +8,8 @@ from sys import path as envpath
 envpath.insert(0, envpath[0]+"/../")
 setcwd(envpath[0])  # project dir, not script dir
 
-from pyalert2yr import ini, csf, yrmap  # noqa: E402, F401
+from pyalert2yr import splitMap, joinMap  # noqa: E402, F401
+from pyalert2yr.formats import ini, csf  # noqa: E402, F401
 
 
 def readConfig():

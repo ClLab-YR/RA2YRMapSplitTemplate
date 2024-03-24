@@ -6,7 +6,7 @@
 from os import remove as delete
 from shutil import move
 
-from _common import readConfig, yrmap
+from _common import readConfig, joinMap
 
 if __name__ == '__main__':
     yrpycfg = readConfig()
@@ -16,5 +16,5 @@ if __name__ == '__main__':
         delete(outpath)
     except Exception:
         pass
-    yrmap.joinMap('./src', 'target')
+    joinMap('./src', 'target')
     move('./src/target.map', outpath)

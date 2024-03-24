@@ -1,30 +1,29 @@
 # 红红单张地图仓库模板
+受[岛风](https://github.com/frg2089)的提案启发，结合古早打理“脑死”的经验诞生的模板仓库。当然很大程度上应该是我自用。
 
-咱以后大概都是这么整罢。直接提交整张地图对 Git 而言无疑是种折磨。
+## 入门和配置
+[Github 模板仓库说明书](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)  
+建议使用 Visual Studio Code 打开项目目录。
 
-Python 版本最低 `3.8.10`，更低版本未经测试。
+脚本需要安装 Python（≥v3.8）才能食用，包依赖参考`pyalert2yr`项目的`requirements.txt`即可。
 
-推荐使用 [Visual Studio Code](https://code.visualstudio.com/) 管理地图仓库。  
-脚本文件均置于`scripts`文件夹，以免喧宾夺主，影响正常的地图项目维护。
+子库依赖需要单独克隆：`git submodule update --init`。  
+我是 SSH 优先，不好使的话不妨打开`.gitmodules`将 url 改为`https://github.com/ClLab-YR/pyalert2yr.git`再重试。
 
-## 脚本和配置文件
-配置文件`config.ini`**位于项目根目录**，而不是`scripts`文件夹。  
-其中，路径带不带引号无所谓，用`/`还是`\`分割无所谓，等号两边有无空格也无所谓。
+## 脚本食用
+直接运行`scripts`目录底下的脚本即可。
+- `csf_compile.py`把`.json`编译成`.csf`；
+- `map_commit.py`把`.map`拆分为`src`目录下的`.ini`和`.mappkg`分块；
+- `map_packup.py`把`src`目录下的分块重组为`.map`文件。
 
-### 地图拆合
-`map_commit.py`将指定地图（默认`./target.map`）拆分为`./src`里的分块文件。  
-`map_packup.py`则相反，把分块文件重组为指定地图。  
-二者作用于同一个地图文件，以保证迭代正常进行。
+项目（不是脚本）的根目录中可新建`config.ini`用于配置上述脚本操作的文件：
 ```ini
 [Settings]
+csf.jsonfile = ./lang.json
+csf.csffile = ./stringtable99.csf
 gitutil.mappath = ./target.map
 ```
+其中，`\`还是`/`无所谓；两端是否有引号无所谓；等号两边有无空格也无所谓。
 
-### CSF 编译
-`csf_compile.py`会将`.json`编译成`.csf`。
-默认遵循下列设置：
-```ini
-[Settings]
-csf.jsonfile = .\lang.json
-csf.csffile = ./stringtable99.csf
-```
+当然，也可以考虑自写脚本。只要你管理起来没什么压力就行（。  
+希望你作图愉快（笑）
