@@ -1,6 +1,11 @@
 # 红红单张地图仓库模板
 受[岛风](https://github.com/frg2089)的提案启发，结合古早打理“脑死”的经验诞生的模板仓库。当然很大程度上应该是我自用。
 
+> [!important]
+> 已经使用此模板的仓库请自行考虑是否**手动**适配更新。  
+> `pyalert2yr`包说实话并不是很完善，本仓库模板的每一次更新都伴随着 py 包的重要修复。  
+> 但强行跟进往往会对你的仓库里已经写好的脚本（可能包括你自己后加的）造成重大的兼容性问题。
+
 ## 入门和配置
 [Github 模板仓库说明书](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)  
 建议使用 Visual Studio Code 打开项目目录。
